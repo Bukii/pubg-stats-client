@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Planet PUBG</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+</head>
+
+<body>
+  <div class="title-bar">
+    <div class="app-name-container">
+      <p>PUBG Planet</p>
+    </div>
+    <div class="menu-button-container">
+      <button id="menu-button" class="menu-button">File</button>
+    </div>
+    <div class="window-controls-container">
+      <button id="minimize-button" class="tb-button minimize-button" /><p>_</p>
+      <button id="min-max-button" class="tb-button min-max-button" /><p>-</p>
+      <button id="close-button" class="tb-button close-button" /><p>x</p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="inner">
+      <div class="player">
+        <p>Favs.</p>
+        <div class="hLine"></div>
+        <a href=""><img src="./assets/icon2.jpg" alt=""></a>
+        <a href=""><img src="./assets/icon2.jpg" alt=""></a>
+      </div>
+      <div class="main">
+        <div class="header">
+          <div class="hinner">
+            <div class="title">
+              <a href="">
+                <h1>PLNT</h1>
+              </a>
+            </div>
+            <div class="menu">
+              <p><a href="./about">About</a></p>
+              <div class="form">
+                <form action="" method="">
+                  <select id="usrRegion" class="src" name="region">
+                    <option value="pc-eu">pc-eu</option>
+                    <option value="pc-na">pc-na</option>
+                    <option value="pc-sa">pc-sa</option>
+                  </select>
+                  <input id="usrSearch" class="src" type="text" name="playerName" placeholder="Player Name...">
+                  <input id="sBtn" class="btn" type="submit" value="Go">
+                </form>
+              </div>
+              <p><a href="./privacy">Privacy</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="matches">
+          <div id="minner" class="minner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="inner">
+      <p>We are using node <script>
+          document.write(process.versions.node)
+        </script>
+      </p>
+      <p>Chrome <script>
+          document.write(process.versions.chrome)
+        </script>
+      </p>
+      <p>and Electron <script>
+          document.write(process.versions.electron)
+        </script>
+      </p>
+    </div>
+  </footer>
+</body>
+
+<script type="text/javascript">
+  // You can also require other files to run in this process
+  require('../renderer.js')
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#minner').load('matches.php');
+  });
+</script>
+
+</html>

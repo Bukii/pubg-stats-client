@@ -1,0 +1,34 @@
+{
+  "name": "planet-client",
+  "version": "0.1.0",
+  "description": "Client for the PUBG Planet website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bukii/planet-client.git"
+  },
+  "keywords": [
+    "PUBG",
+    "Stats",
+    "Game",
+    "Client",
+    "Desktop",
+    "electron.js"
+  ],
+  "author": "Lukas W.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bukii/planet-client/issues"
+  },
+  "homepage": "https://github.com/Bukii/planet-client#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "custom-electron-titlebar": "^3.0.8",
+    "electron": "^5.0.2",
+    "jquery": "^3.4.1"
+  }
+}

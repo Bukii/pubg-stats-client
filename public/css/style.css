@@ -1,0 +1,304 @@
+/* --- GLOBAL --- */
+body {
+  background-color: var(--DARK);
+  font-family: 'Arial';
+  margin: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+:root {
+  --DARK: #212326;
+  --TEXT: #292D34;
+  --WIN: #282C34;
+}
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* --- TITLE BAR --- */
+.title-bar {
+  position: relative;
+  -webkit-app-region: drag;
+  display: flex;
+  background-color: var(--DARK);
+  width: 100%;
+  height: 30px;
+  z-index: 1000000000;
+}
+.title-bar .menu-button-container {
+  /* border: 0.5px red solid; */
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  width: 25%;
+}
+.title-bar .app-name-container {
+  /* border: 0.5px red solid; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-grow: 1;
+  width: 15%;
+}
+.title-bar .app-name-container p {
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-indent: 10px;
+  font-family: 'Righteous', cursive;
+  opacity: 0.5;
+}
+.title-bar .window-controls-container {
+  /* border: 0.5px red solid; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  width: 60%;
+}
+.title-bar .tb-button {
+  -webkit-app-region: no-drag;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 100px;
+}
+.title-bar .tb-button p {
+  /* border: 2px solid red; */
+  position: relative;
+  display: none;
+  margin: -8px;
+  opacity: 0.5;
+}
+.title-bar .tb-button:hover p {
+  display: block;
+}
+.title-bar .menu-button {
+  display: none;
+}
+.title-bar .menu-button:hover {
+
+}
+.title-bar .tb-button.minimize-button {
+  background-color: green;
+}
+.title-bar .tb-button.min-max-button {
+  background-color: orange;
+}
+.title-bar .tb-button.close-button {
+  background-color: firebrick;
+}
+
+
+/* --- CONTENT --- */
+.content {
+  /* border: 2px solid blue; */
+  position: absolute;
+  width: 100%;
+  height: 95%;
+}
+.content .inner {
+  /* border: 2px solid red; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.content .inner .player {
+  /* border: 2px solid green; */
+  position: relative;
+  background-color: var(--DARK);
+  /* box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.3); */
+  width: 80px;
+  height: 100%;
+}
+.content .inner .player p {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 15px auto 15px auto;
+  opacity: 0.3;
+}
+.content .inner .player .hLine {
+  display: block;
+  margin: 0 auto !important;
+  background-color: var(--TEXT);
+  width: 80%;
+  height: 1px;
+}
+.content .inner .player a:hover img {
+  transition-duration: 0.3s;
+  border-radius: 15px;
+}
+.content .inner .player a img {
+  display: block;
+  width: 70%;
+  height: auto;
+  border-radius: 100px;
+  margin: 15px auto 15px auto;
+}
+.content .inner .main {
+  /* border: 2px solid green; */
+  position: relative;
+  background-color: var(--WIN);
+  border-radius: 15px 0 0 0;
+  width: 100%;
+  height: 100%;
+}
+.content .inner .main .header {
+  /* border: 2px solid green; */
+  position: relative;
+  width: 100%;
+  height: 75px;
+}
+.content .inner .main .header .hinner {
+  /* border: 2px solid red; */
+  position: relative;
+  display: flex;
+  margin: 0 auto !important;
+  width: 94%;
+}
+.content .inner .main .header .hinner .title {
+  /* border: 2px solid red; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 75px;
+  margin: 0;
+}
+.content .inner .main .header .hinner .title h1 {
+  /* border: 2px solid red; */
+  width: auto;
+  height: 30px;
+  display: inline-block;
+  border-bottom: 2px solid orange;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+.content .inner .main .header .hinner .menu {
+  /* border: 2px solid violet; */
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 75px;
+}
+.content .inner .main .header .hinner .menu p {
+  /* border: 2px solid red; */
+  /* width: auto; */
+  height: 65px;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+.content .inner .main .header .hinner .menu a {
+  /* border: 2px solid blue; */
+  position: relative;
+  left: -5px;
+  top: -5px;
+  display: flex;           /* Magic begins                    */
+  align-items: center;     /* Align vertically               */
+  text-decoration: none;
+  margin: 22px 50px 22px 50px;
+  padding: 5px;
+  color: white;
+}
+.content .inner .main .header .hinner .menu a:hover {
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+.content .inner .main .header .hinner .menu .form {
+  /* border: 2px solid red; */
+  /* width: auto; */
+  height: 75px;
+  margin: 0;
+}
+.content .inner .main .header .hinner .menu .form form {
+  /* border: 2px solid green; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px 0 50px;
+}
+.content .inner .main .header .hinner .menu .form form .src {
+  display: inline-block;
+  width: 320px;
+  height: auto;
+  text-align: center;
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 200px;
+}
+.content .inner .main .header .hinner .menu .form form #usrRegion {
+  width: 80px;
+}
+.content .inner .main .header .hinner .menu .form form .btn {
+  /*border: 2px solid red;*/
+  display: inline-block;
+  width: 65px; /* default: 35px; */
+  height: 35px;
+  color: white;
+  font-weight: bold;
+  background-color: orange;
+  border: none;
+  border-radius: 200px;
+  margin: 5px;
+}
+.content .inner .main .matches {
+  /* border: 2px solid green; */
+  position: relative;
+  height: 630px;
+}
+.content .inner .main .matches .minner {
+  /* border: 2px solid red; */
+  position: relative;
+  display: block;
+  margin: 0 auto !important;
+  width: 90%;
+  padding: 75px 0 75px 0;
+}
+
+
+/* --- FOOTER --- */
+footer {
+  /* border: 2px solid red; */
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--DARK);
+  width: 100%;
+  height: 30px;
+  z-index: 1;
+}
+footer .inner {
+  /* border: 2px solid red; */
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+}
+footer .inner p {
+  /* border: 2px solid red; */
+  margin: 0 30px 0 30px;
+  font-size: 12px;
+  opacity: 0.3;
+}
